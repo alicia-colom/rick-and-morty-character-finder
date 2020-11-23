@@ -5,7 +5,7 @@ import LoadingImg from '../images/loader-point.gif'
 const Loader = () => {
 	return (
 		<div className="loader">
-			<img className="loadingImg" src={LoadingImg} alt="Loading animation" />
+			<img className="loader__img" src={LoadingImg} alt="Loading animation" />
 		</div>
 	);
 };

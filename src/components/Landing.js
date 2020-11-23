@@ -1,16 +1,17 @@
 import '../stylesheets/Landing.scss';
 import { Link } from 'react-router-dom';
-import Loader from './Loader';
+import Header from './Header';
 import Footer from './Footer';
 
 const Landing = () => {
 	return (
 		<>
-			<header className="landing">
-				<h1>Landing</h1>
-			</header>
+			<Header />
 
-			<main>
+			<main className="landing">
+				<h1 className="landing__title">
+					Busca tu personaje favorito de Rick y Morty
+				</h1>
 				<Link
 					to="/home"
 					className="landing__link"
@@ -18,7 +19,6 @@ const Landing = () => {
 				>
 					¡Vamos!
 				</Link>
-				<Loader />
 			</main>
 
 			<Footer />

@@ -11,7 +11,7 @@ const Filters = (props) => {
 				Select para filtrar:
 			</label>
 			<select
-				classname="selection"
+				className="selection"
 				name="selection"
 				id="selection"
 				onChange={handleChange}

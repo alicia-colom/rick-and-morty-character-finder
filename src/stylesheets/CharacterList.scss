@@ -1,3 +1,18 @@
 .character-list {
-  background-color: skyblue;
+	text-align: center;
+	background-color: #1c273a;
+	color: #6b7277;
+	// background-image: url(../images/Rick-Morty_space.jpg);
+	// background-size: cover;
+
+	&__form {
+		&--label {
+		}
+		&--input {
+		}
+	}
+	&__list {
+		&--item {
+		}
+	}
 }

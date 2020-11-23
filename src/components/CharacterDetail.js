@@ -1,34 +1,39 @@
 import '../stylesheets/CharacterDetail.scss';
 import { Link } from 'react-router-dom';
+import Header from './Header';
 import Footer from './Footer';
-import logoRM from '../images/Rick-Morty_logo.png';
 
 const CharacterDetail = (props) => {
 	return (
 		<>
-			<header className="header">
-				<Link to="/home">
-					<img
-						className="header__img"
-						src={logoRM}
-						alt="Logo Rick y Morty"
-						title="Ir al buscador de Rick y Morty"
-					/>
-				</Link>
-				<nav>
-					<ul>
-						<li>
-							<Link to="/">Start again</Link>
-						</li>
-						<li>
-							<Link to="/home">Back to search</Link>
-						</li>
-					</ul>
-				</nav>
-			</header>
+			<Header />
 
 			<main className="character-detail">
-				<h1>Character Detail</h1>
+				<Link to="/home" className="character-detail__link">
+					Back to search
+				</Link>
+				<div className="character-detail__container">
+					<img src="" alt="" className="character-detail__container--img" />
+					<div className="character-detail__container--info">
+						<h2 className="detail-name">Nombre personaje</h2>
+						<p>
+							<b>Estado: </b>
+							{}
+						</p>
+						<p>
+							<b>Especie: </b>
+							{}
+						</p>
+						<p>
+							<b>Origen: </b>
+							{}
+						</p>
+						<p>
+							<b>Episodios: </b>
+							{}
+						</p>
+					</div>
+				</div>
 			</main>
 
 			<Footer />

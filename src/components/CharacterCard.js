@@ -5,8 +5,12 @@ const CharacterCard = (props) => {
 	return (
 		<>
 			<article className="character-card">
-				<h1>Character Card</h1>
-				<Link to="/info">Enlace a detalles del Personaje</Link>
+				<img src="" alt="" className="character-card__img" />
+				<h2 className="character-card__name">Nombre personaje</h2>
+				<p className="character-card__paragraph">Especie</p>
+				<Link to="/info" className="character-card__link">
+					Ficha completa
+				</Link>
 			</article>
 		</>
 	);
