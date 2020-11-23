@@ -1,4 +1,4 @@
-import '../stylesheets/loader.scss';
+import '../stylesheets/Loader.scss';
 import LoadingImg from '../images/loader-point.gif'
 
 
