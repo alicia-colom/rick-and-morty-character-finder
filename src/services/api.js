@@ -1,11 +1,9 @@
 const getDataApi = (search) => {
-	return fetch(
-		'https://rickandmortyapi.com/documentation/#get-all-characters' + search
-	)
+	return fetch('https://rickandmortyapi.com/api/character/?name=' + search)
 		.then((response) => response.json())
-		.then((data) => {
-			return data;
+		.then((dataApi) => {
+			return dataApi;
 		});
 };
 
-export default { getDataApi: getDataApi };
+export default getDataApi;

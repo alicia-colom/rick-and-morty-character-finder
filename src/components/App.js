@@ -1,46 +1,27 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Landing from './Landing';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
-import api from '../services/api';
+import getDataApi from '../services/api';
 
 const App = () => {
 	// Estados
-	const [data, setData] = useState();
-	const [search, setSearch] = useState();
+	// const [data, setData] = useState();
+	const [userSearch, setUserSearch] = useState('');
+	const [searchResults, setSearchResults] = useState([]);
 
 	// Gestionar API
-	// useEffect(() => {
-	// 	api.getDataApi(search).then(
-	// 		(data) => {
-	// 			return console.log('Estoy en el 3º then', data);
-	// 		},
-	// 		[search]
-	// 	);
-	// });
-
-	// Gestionar API (DE FORMA LARGA)
-	useEffect((search) => {
-		return fetch(
-			'https://rickandmortyapi.com/documentation/#get-all-characters' + search
-		)
-			.then((response) => response.json())
-			.then((data) => {
-				return data;
-			})
-			.then(
-				(data) => {
-					return console.log('Estoy en el 3º then', data);
-				},
-				[search]
-			);
-	});
+	useEffect(() => {
+		getDataApi(userSearch).then((dataApi) => {
+			setSearchResults(dataApi.results);
+			console.log(dataApi.info);
+		});
+	}, [userSearch]);
 
 	// Manejadora de input
 	const handleInputValue = (inputValue) => {
-		setSearch(inputValue);
-		console.log(data, search);
+		setUserSearch(inputValue);
 	};
 
 	return (
@@ -50,10 +31,12 @@ const App = () => {
 					<Landing />
 				</Route>
 				<Route exact path="/home">
-					<CharacterList data={data} handleInputValue={handleInputValue} />
+					<CharacterList
+						searchResults={searchResults}
+						handleInputValue={handleInputValue}
+					/>
 				</Route>
-				<Route exact path="/info">
-					{/* <Route exact path="/info:NOMBREdePERSONAJEporPROPS"> */}
+				<Route exact path="/info/:characterName">
 					<CharacterDetail />
 				</Route>
 			</Switch>

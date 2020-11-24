@@ -23,7 +23,7 @@ const CharacterList = (props) => {
 
 	// Manejando input
 	const handleChange = (ev) => {
-		props.handleInputValue({ inputValue: ev.currentTarget.value });
+		props.handleInputValue(ev.currentTarget.value);
 	};
 
 	return (
