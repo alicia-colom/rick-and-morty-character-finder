@@ -3,8 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import Landing from './Landing';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
+import Error from './Error';
 import getDataApi from '../services/api';
-import { render } from '@testing-library/react';
 
 const App = () => {
 	// Estados
@@ -27,11 +27,14 @@ const App = () => {
 	// Manejando CharacterDetail
 	const renderCharacterDetail = (props) => {
 		const characterRoute = props.match.params.characterName;
-		const sameCharacterName = resultList.find((eachResult) => {
-			console.log(characterRoute === eachResult.name);
+		const existCharacter = resultList.find((eachResult) => {
 			return characterRoute === eachResult.name;
 		});
-		return <h1>hola</h1>;
+		return existCharacter ? (
+			<CharacterDetail detail={existCharacter} />
+		) : (
+			<Error />
+		);
 	};
 
 	return (
