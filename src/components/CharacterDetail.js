@@ -4,6 +4,8 @@ import Header from './Header';
 import Footer from './Footer';
 
 const CharacterDetail = (props) => {
+	console.log(props.resultado);
+
 	return (
 		<>
 			<Header />

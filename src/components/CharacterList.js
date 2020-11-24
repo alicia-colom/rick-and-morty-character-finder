@@ -7,14 +7,12 @@ import Footer from './Footer';
 import CharacterCard from './CharacterCard';
 
 const CharacterList = (props) => {
-	// console.log(props.data);
-
 	// // Gestión datos recibidos
-	// const character = props.data.map((eachCharacter) => (
-	// 	<li key={eachCharacter.id} className="character-list__list--item">
-	// 		<CharacterCard />
-	// 	</li>
-	// ));
+	const characters = props.resultList.map((eachCharacter) => (
+		<li key={eachCharacter.id} className="character-list__list--item">
+			<CharacterCard character={eachCharacter} />
+		</li>
+	));
 
 	// Evitar submiten input
 	const handleSubmit = (ev) => {
@@ -45,10 +43,7 @@ const CharacterList = (props) => {
 					/>
 				</form>
 				<Loader />
-				<ul className="character-list__list">
-					{/* {character} */}
-					<CharacterCard />
-				</ul>
+				<ul className="character-list__list">{characters}</ul>
 			</main>
 
 			<Footer />
