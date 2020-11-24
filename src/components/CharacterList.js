@@ -9,7 +9,7 @@ import CharacterCard from './CharacterCard';
 const CharacterList = (props) => {
 	// // Gestión datos recibidos
 	const characters = props.resultList.map((eachCharacter) => (
-		<li key={eachCharacter.id} className="character-list__list--item">
+		<li key={eachCharacter.id}>
 			<CharacterCard character={eachCharacter} />
 		</li>
 	));
@@ -42,7 +42,6 @@ const CharacterList = (props) => {
 						onChange={handleChange}
 					/>
 				</form>
-				<Loader />
 				<ul className="character-list__list">{characters}</ul>
 			</main>
 

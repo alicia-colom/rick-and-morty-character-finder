@@ -2,8 +2,6 @@ body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	background-color: #191919;
-	color: #fefefe;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
 		sans-serif;
@@ -14,4 +12,25 @@ body {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
+}
+
+.root {
+	color: #fefefe;
+	background-image: url(./images/Rick-Morty_space.jpg);
+	background-image: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.3) 0%,
+			rgba(0, 0, 0, 0.5) 100%
+		),
+		url(./images/Rick-Morty_space.jpg);
+
+	background-color: #191919;
+	min-height: 100vh;
+	background-attachment: fixed;
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	text-decoration: none;
+	list-style-type: none;
 }

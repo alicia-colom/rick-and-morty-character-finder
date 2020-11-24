@@ -1,12 +1,48 @@
 .character-detail {
+	margin: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
 	&__link {
+		color: #efefef;
+		border-radius: 40px;
+		background-color: #47b5cd;
+		font-weight: bold;
+		text-decoration: none;
+		text-shadow: 1px 2px #122988;
+		padding: 10px 20px;
+		align-self: flex-end;
 	}
+
 	&__container {
+		text-align: left;
+
 		&--img {
+			margin-top: 25px;
+			border-radius: 40px;
+			box-shadow: 0 0 5px 10px rgba(71, 181, 205, 0.5);
 		}
 		&--info {
-			.detail-name {
-			}
+		margin-top: 30px;
+
+		}
+	}
+}
+.detail {
+	padding: 15px 25px;
+	border-radius: 40px;
+	background-color: rgba(71, 181, 205, 0.3);
+	box-shadow: 0 0 5px 10px rgba(3, 5, 5, 0.3);
+
+	&__name {
+		margin: 0;
+		font-size: 32px;
+		color: #47b5cd;
+		text-shadow: 2px 2px #122988;
+	}
+	&__episodes {
+		&--list {
 		}
 	}
 }

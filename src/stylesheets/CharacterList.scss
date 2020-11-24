@@ -1,9 +1,8 @@
 .character-list {
+	display: flex;
+	flex-direction: column;
 	text-align: center;
-	background-color: #1c273a;
-	color: #6b7277;
-	// background-image: url(../images/Rick-Morty_space.jpg);
-	// background-size: cover;
+	justify-content: center;
 
 	&__form {
 		&--label {
@@ -12,7 +11,9 @@
 		}
 	}
 	&__list {
-		&--item {
-		}
+		list-style: none;
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-gap: 20px;
 	}
 }

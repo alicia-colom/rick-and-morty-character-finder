@@ -4,10 +4,11 @@ import './index.scss';
 import App from './components/App';
 import { HashRouter } from 'react-router-dom';
 
+
 ReactDOM.render(
 	<React.StrictMode>
 		<HashRouter>
-			<App className="app" />
+			<App />
 		</HashRouter>
 	</React.StrictMode>,
 	document.getElementById('root')

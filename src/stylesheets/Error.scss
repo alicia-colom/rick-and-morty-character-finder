@@ -1,13 +1,29 @@
 .error {
 	background-image: url(../images/Rick-Morty_shadows.jpg);
+	min-height: 100vh;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
 	background-size: cover;
 
+	text-align: center;
+	padding: 3vh;
+
 	&__link {
+		color: #efefef;
+		border-radius: 40px;
+		background-color: #cf192b;
+		font-weight: bold;
+		padding: 10px 20px;
+		text-decoration: none;
+		text-shadow: 1px 1px #191919;
 	}
+
 	&__container {
+		text-shadow: 1px 1px #191919;
+
 		&--title {
-		}
-		&--text {
+			color: #cf192b;
 		}
 	}
 }

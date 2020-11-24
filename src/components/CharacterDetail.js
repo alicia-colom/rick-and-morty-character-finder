@@ -26,7 +26,7 @@ const CharacterDetail = (props) => {
 						alt=""
 						className="character-detail__container--img"
 					/>
-					<div className="detail">
+					<div className="character-detail__container--info detail">
 						<h2 className="detail__name">{props.detail.name}</h2>
 						<p>
 							<b>Status: </b>

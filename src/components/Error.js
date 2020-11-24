@@ -6,19 +6,20 @@ import Footer from './Footer';
 const CharacterDetail = (props) => {
 	return (
 		<>
-			<Header />
-
 			<main className="error">
 				<Link to="/home" className="error__link">
-					Back to search
+					Try again your search
 				</Link>
 				<div className="error__container">
-					<h2 className="error__container--title">
+					<h1 className="error__container--title">
 						This character doesn't exist.
-					</h2>
-					<h3>I mean... It doesn't exist dead or alive.</h3>
-					<h4>It's your invention, dude. You made it up!</h4>
-					<h5>Try again your search.</h5>
+					</h1>
+					<h2>I mean... It doesn't exist dead or alive.</h2>
+					<h3>It's your invention, dude. </h3>
+					<h4>You made it up!!</h4>
+					<h5>Do you think you are better than us?!</h5>
+					<h6>What the *$%* !?</h6>
+
 				</div>
 			</main>
 
