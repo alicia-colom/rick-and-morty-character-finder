@@ -1,12 +1,12 @@
 import '../stylesheets/CharacterList.scss';
-import ReactDOM from 'react';
 import Header from './Header';
 import Loader from './Loader';
 import Filters from './Filters';
 import Footer from './Footer';
-import NotResults from './NotResults';
 import CharacterCard from './CharacterCard';
-import imgNotResults from '../images/Rick-Morty_men-in-black.png';
+// import ReactDOM from 'react';
+// import NotResults from './NotResults';
+// import imgNotResults from '../images/Rick-Morty_men-in-black.png';
 
 const CharacterList = (props) => {
 	// Revisión si hay resultados
@@ -26,7 +26,7 @@ const CharacterList = (props) => {
 		</li>
 	));
 
-	// Evitar submiten input
+	// Evitar submit en input
 	const handleSubmit = (ev) => {
 		ev.preventDefault();
 	};

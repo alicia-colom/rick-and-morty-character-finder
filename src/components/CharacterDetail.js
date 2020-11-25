@@ -52,6 +52,7 @@ const CharacterDetail = (props) => {
 						<div className="detail__episodes">
 							<label htmlFor="episodes">
 								<b>Episodes: </b>
+								{props.detail.episode.length}{' '}
 							</label>
 							<select
 								className="detail__episodes--list"
