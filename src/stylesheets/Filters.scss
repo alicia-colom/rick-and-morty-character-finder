@@ -1,11 +1,14 @@
 .filter {
-
+  width: 90vw;
+  padding: 10px 20px;
+	display: flex;
+	&__fieldset {
+		border: 0;
+	}
 }
 
 .labelSelection {
-
 }
 
 .selection {
-  
 }

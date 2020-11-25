@@ -42,9 +42,12 @@ const CharacterList = (props) => {
 
 			<main className="character-list">
 				<form action="" className="character-list__form">
-					<label htmlFor="searchInput" className="character-list__form--label">
+					<legend
+						htmlFor="searchInput"
+						className="character-list__form--legend"
+					>
 						¿Qué personaje buscas?
-					</label>
+					</legend>
 					<div className="character-list__form--container">
 						<i
 							className="fa fa-search character-list__form--icon"
@@ -61,6 +64,8 @@ const CharacterList = (props) => {
 						/>
 					</div>
 				</form>
+				<Filters resultList={props.resultList} />
+
 				<div>{returning()}</div>
 			</main>
 
