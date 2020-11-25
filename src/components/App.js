@@ -5,10 +5,10 @@ import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import Error from './Error';
 import getDataApi from '../services/api';
+import NotResults from './NotResults';
 
 const App = () => {
 	// Estados
-	// const [data, setData] = useState();
 	const [userSearch, setUserSearch] = useState('');
 	const [resultList, setResultList] = useState([]);
 
@@ -48,6 +48,7 @@ const App = () => {
 						resultList={resultList}
 						handleInputValue={handleInputValue}
 					/>
+					);
 				</Route>
 				<Route
 					exact

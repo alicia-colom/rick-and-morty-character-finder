@@ -5,15 +5,49 @@
 	justify-content: center;
 
 	&__form {
+		display: grid;
+		grid-template-rows: auto auto;
+		padding: 15px 0;
+		width: 300px;
+		align-self: center;
+
 		&--label {
+			font-size: 25px;
+			padding: 15px 0;
+			text-shadow: 1px 1px #47b5cd;
+		}
+		&--container {
+			height: 32px;
+			background-color: whitesmoke;
+			border: 2px solid #122988;
+			border-radius: 10px;
+			display: flex;
+			align-items: center;
+			&:hover {
+				border: 2px solid #47b5cd;
+				cursor: auto;
+			}
+		}
+		&--icon {
+			margin: 0 8px 0 6px;
+			color: #47b5cd;
+			font-size: 16px;
 		}
 		&--input {
+			background-color: whitesmoke;
+			border: none;
+			font-size: 15px;
+			&:focus {
+				outline: none;
+			}
 		}
 	}
 	&__list {
+		padding: 0;
 		list-style: none;
 		display: grid;
-		grid-template-columns: auto auto auto;
+		grid-template-columns: repeat(auto-fill, 200px);
 		grid-gap: 20px;
+		justify-content: center;
 	}
 }

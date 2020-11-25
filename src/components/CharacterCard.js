@@ -13,15 +13,7 @@ const CharacterCard = (props) => {
 			<div className="character-card__info">
 				<h2 className="character-card__info--name">{props.character.name}</h2>
 				<p className="character-card__info--paragraph">
-					
-					
-					
-					
 					{props.character.species}
-				
-				
-				
-				
 				</p>
 				<Link
 					to={`/info/${props.character.name}`}

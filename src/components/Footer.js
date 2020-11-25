@@ -4,13 +4,28 @@ const Footer = () => {
 	return (
 		<>
 			<footer className="footer">
-				<img
-					className="footer__img"
-					src=""
-					alt="Logo footer"
-					title="Logo footer"
-				/>
-				<small className="footer__copyright">Copyright</small>
+				<p className="footer__copyright">
+					Made with{' '}
+					<i className="fa fa-heart footer__copyright--icon" aria-hidden="true"></i>{' '}
+					by{' '}
+					<a
+						className="footer__copyright--author"
+						href="https://www.linkedin.com/in/aliciacolomortega/"
+						target="_blank"
+						title="Enlace a LinkedIn de Alicia Colom"
+					>
+						{' '}
+						Alicia Colom{' '}
+					</a>
+				</p>
+				<a
+					className="footer__small"
+					href="https://twitter.com/hashtag/PromoKizzy?src=hashtag_click"
+					target="_blank"
+					title="Enlace al hashtag de Twitter de #PromoKizzy"
+				>
+					Adalab #PromoKizzy 2020
+				</a>
 			</footer>
 		</>
 	);

@@ -4,10 +4,15 @@ import Header from './Header';
 import Footer from './Footer';
 
 const CharacterDetail = (props) => {
+	// Reemplazar url por número de episodio
 	const allEpisodes = props.detail.episode.map((eachEpisode, i) => {
+		const newString = eachEpisode.replace(
+			'https://rickandmortyapi.com/api/episode/',
+			''
+		);
 		return (
 			<option className="detail__episodes--item" value={eachEpisode}>
-				Episode #{i}
+				{newString}
 			</option>
 		);
 	});

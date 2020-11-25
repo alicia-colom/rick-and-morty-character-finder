@@ -10,14 +10,15 @@ const Landing = () => {
 
 			<main className="landing">
 				<h1 className="landing__title">
-					Busca tu personaje favorito de Rick y Morty
+					Find the craziest characters from your favourite TV show and know them
+					better
 				</h1>
 				<Link
 					to="/home"
 					className="landing__link"
 					title="Ir al buscador de Rick y Morty"
 				>
-					¡Vamos!
+					Let's go!
 				</Link>
 			</main>
 

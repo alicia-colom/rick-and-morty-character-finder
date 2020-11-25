@@ -1,13 +1,25 @@
 import '../stylesheets/CharacterList.scss';
-// import { useState } from 'react-router-dom';
+import ReactDOM from 'react';
 import Header from './Header';
 import Loader from './Loader';
 import Filters from './Filters';
 import Footer from './Footer';
+import NotResults from './NotResults';
 import CharacterCard from './CharacterCard';
+import imgNotResults from '../images/Rick-Morty_men-in-black.png';
 
 const CharacterList = (props) => {
-	// // Gestión datos recibidos
+	// Revisión si hay resultados
+	const returning = () => {
+		// debugger;
+		if (!props.resultList) {
+			return props.children;
+		} else {
+			return <ul className="character-list__list">{characters}</ul>;
+		}
+	};
+
+	// Gestión datos recibidos
 	const characters = props.resultList.map((eachCharacter) => (
 		<li key={eachCharacter.id}>
 			<CharacterCard character={eachCharacter} />
@@ -33,21 +45,41 @@ const CharacterList = (props) => {
 					<label htmlFor="searchInput" className="character-list__form--label">
 						¿Qué personaje buscas?
 					</label>
-					<input
-						id="searchInput"
-						type="text"
-						className="character-list__form--input"
-						placeholder="Escribe aquí..."
-						onSubmit={handleSubmit}
-						onChange={handleChange}
-					/>
+					<div className="character-list__form--container">
+						<i
+							className="fa fa-search character-list__form--icon"
+							aria-hidden="true"
+						></i>
+						<input
+							id="searchInput"
+							type="text"
+							className="character-list__form--input"
+							title="Escribe el personaje que quieres buscar"
+							placeholder="Escribe aquí..."
+							onSubmit={handleSubmit}
+							onChange={handleChange}
+						/>
+					</div>
 				</form>
-				<ul className="character-list__list">{characters}</ul>
+				<div>{returning()}</div>
 			</main>
 
 			<Footer />
 		</>
 	);
 };
+
+// ReactDOM.render(
+// 	<div styling="info">
+// 		<h2>There is nothing in here</h2>
+// 		<img
+// 			src={imgNotResults}
+// 			alt="Rick and Morty keep driving"
+// 			className="imgNotResults"
+// 		/>
+// 		<h2>Keep browsing</h2>
+// 	</div>,
+// 	document.getElementById('root')
+// );
 
 export default CharacterList;

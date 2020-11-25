@@ -1,6 +1,33 @@
 .landing {
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	text-align: center;
 	&__title {
+		margin: 0 auto;
+		padding: 20px;
+		width: 60vw;
+		font-size: 38px;
+		@media all and (max-width: 500px) {
+			padding: 30px 10px;
+			font-size: 28px;
+			width: 70vw;
+		}
 	}
 	&__link {
+		margin: 10px auto;
+		color: #efefef;
+		font-weight: bold;
+		font-size: 22px;
+		width: 100px;
+		border-radius: 40px;
+		background-color: #47b5cd;
+		text-decoration: none;
+		text-shadow: 1px 2px #122988;
+		padding: 10px 20px;
+		@media all and (max-width: 500px) {
+			margin-bottom: 40px;
+		}
 	}
 }

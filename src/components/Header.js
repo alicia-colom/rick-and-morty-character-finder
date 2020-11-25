@@ -10,7 +10,7 @@ const Header = (props) => {
 					className="header__logo"
 					src={logoRM}
 					alt="Logo Rick y Morty"
-					title="Ir al buscador de Rick y Morty"
+					title="Volver al inicio"
 				/>
 			</Link>
 		</header>
