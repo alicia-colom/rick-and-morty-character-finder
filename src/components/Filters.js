@@ -7,18 +7,8 @@ const Filters = (props) => {
 	};
 
 	const handleClickGender = (ev) => {
-		console.log('filtro por gender', ev.target.value);
-	};
-
-	// Filtro para species
-	const specieList = props.resultList.map((eachCharacter) => (
-		<option key={eachCharacter.id} value={eachCharacter.species}>
-			{eachCharacter.species}
-		</option>
-	));
-
-	const handleChangeSpecie = (ev) => {
-		console.log('filtro por specie', ev.target.value);
+		const genderValue = ev.target.value;
+		return props.handleFilterGender(genderValue);
 	};
 
 	return (
@@ -63,17 +53,6 @@ const Filters = (props) => {
 					value="unknown"
 					onChange={handleClickGender}
 				/>
-			</fieldset>
-			<fieldset className="filter__fieldset">
-				<label htmlFor="specie">Species: </label>
-				<select
-					className="filter__select"
-					name="specie"
-					id="specie"
-					onChange={handleChangeSpecie}
-				>
-					{specieList}
-				</select>
 			</fieldset>
 		</form>
 	);

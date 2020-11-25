@@ -4,17 +4,14 @@ import Loader from './Loader';
 import Filters from './Filters';
 import Footer from './Footer';
 import CharacterCard from './CharacterCard';
-// import ReactDOM from 'react';
-// import NotResults from './NotResults';
-// import imgNotResults from '../images/Rick-Morty_men-in-black.png';
+import NotResults from './NotResults';
 
 const CharacterList = (props) => {
 	// console.log(props.userSearch);
 	// No result function
 	const returning = () => {
-		// debugger;
 		if (props.resultList.length === 0) {
-			return 'No hay personajes para este filtro';
+			return <NotResults />;
 		} else {
 			return <ul className="character-list__list">{characters}</ul>;
 		}
@@ -26,8 +23,6 @@ const CharacterList = (props) => {
 			<CharacterCard character={eachCharacter} />
 		</li>
 	));
-
-	console.log(props.filterList);
 
 	// Prevent submit in input
 	const handleSubmit = (ev) => {
@@ -71,33 +66,16 @@ const CharacterList = (props) => {
 				<Filters
 					resultList={props.resultList}
 					handleFilterStatus={props.handleFilterStatus}
+					handleFilterGender={props.handleFilterGender}
 				/>
 
 				<div>{returning()}</div>
 
-				{/* {(props.resultList.length !== 0) 
-				? 
-				(<ul className="character-list__list">{characters}</ul>) 
-				: 
-				(<NotResults/>)} */}
 			</main>
 
 			<Footer />
 		</>
 	);
 };
-
-// ReactDOM.render(
-// 	<div styling="info">
-// 		<h2>There is nothing in here</h2>
-// 		<img
-// 			src={imgNotResults}
-// 			alt="Rick and Morty keep driving"
-// 			className="imgNotResults"
-// 		/>
-// 		<h2>Keep browsing</h2>
-// 	</div>,
-// 	document.getElementById('root')
-// );
 
 export default CharacterList;
