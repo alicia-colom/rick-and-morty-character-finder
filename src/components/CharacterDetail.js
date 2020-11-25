@@ -34,13 +34,15 @@ const CharacterDetail = (props) => {
 						className="character-detail__container--img"
 					/>
 					<div className="character-detail__container--info detail">
-						<h2 className="detail__name">{props.detail.name}</h2>
-						<img
-							src={props.detail.status === 'Dead' ? deadIcon : aliveIcon}
-							alt="Status icon"
-							title="Status of the character"
-							className="detail__statusIcon"
-						/>
+						<div className="character-detail__container--header">
+							<h2 className="detail__name">{props.detail.name}</h2>
+							<img
+								src={props.detail.status === 'Dead' ? deadIcon : aliveIcon}
+								alt="Status icon"
+								title="Status of the character"
+								className="detail__statusIcon"
+							/>
+						</div>{' '}
 						<p>
 							<b>Status: </b>
 							{props.detail.status}

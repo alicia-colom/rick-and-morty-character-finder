@@ -23,11 +23,9 @@ const Filters = (props) => {
 	return (
 		<form className="filter">
 			<fieldset className="filter__fieldset">
-				<label className="filter__status--label" htmlFor="status">
-					Status:{' '}
-				</label>
+				<label htmlFor="status">Status: </label>
 				<select
-					className="filter__status--select"
+					className="filter__select"
 					name="status"
 					id="status"
 					onChange={handleChangeStatus}
@@ -45,6 +43,7 @@ const Filters = (props) => {
 					id="Female"
 					name="gender"
 					value="Female"
+					className="filter__gender"
 					onChange={handleClickGender}
 				/>
 				<label htmlFor="Male">Male</label>
@@ -65,11 +64,9 @@ const Filters = (props) => {
 				/>
 			</fieldset>
 			<fieldset className="filter__fieldset">
-				<label className="filter__specie--label" htmlFor="specie">
-					Species:{' '}
-				</label>
+				<label htmlFor="specie">Species: </label>
 				<select
-					className="filter__specie--select"
+					className="filter__select"
 					name="specie"
 					id="specie"
 					onChange={handleChangeSpecie}
