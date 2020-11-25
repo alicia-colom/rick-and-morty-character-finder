@@ -7,33 +7,44 @@ import Error from './Error';
 import getDataApi from '../services/api';
 
 const App = () => {
-	// Estados
+	// States
 	const [userSearch, setUserSearch] = useState('');
 	const [resultList, setResultList] = useState([]);
+	const [filterList, setFilterList] = useState();
+	// console.log(resultList, filterList);
+	// console.log(userSearch);
 
-	// Gestionar API
+	// Handle data API
 	useEffect(() => {
 		getDataApi(userSearch).then((dataApi) => {
 			setResultList(dataApi.results);
 		});
 	}, [userSearch]);
 
-	// Manejadora de input
+	// Handle input
 	const handleInputValue = (inputValue) => {
 		setUserSearch(inputValue);
 	};
 
-	// Manejando CharacterDetail
+	// Handle CharacterDetail
 	const renderCharacterDetail = (props) => {
 		const characterRoute = props.match.params.characterName;
 		const existCharacter = resultList.find((eachResult) => {
 			return characterRoute === eachResult.name;
 		});
 		return existCharacter ? (
-			<CharacterDetail detail={existCharacter} />
+			<CharacterDetail detail={existCharacter} userSearch={userSearch} />
 		) : (
 			<Error />
 		);
+	};
+
+	// Handle filter status
+	const handleFilterStatus = (value) => {
+		const filterStatus = resultList.filter(
+			(eachItem) => eachItem.status === value
+		);
+		return setFilterList(filterStatus);
 	};
 
 	return (
@@ -46,6 +57,8 @@ const App = () => {
 					<CharacterList
 						resultList={resultList}
 						handleInputValue={handleInputValue}
+						handleFilterStatus={handleFilterStatus}
+						filterList={filterList}
 					/>
 				</Route>
 				<Route
@@ -56,6 +69,6 @@ const App = () => {
 			</Switch>
 		</>
 	);
-};
+};;;
 
 export default App;

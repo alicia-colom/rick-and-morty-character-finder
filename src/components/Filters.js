@@ -2,7 +2,8 @@ import '../stylesheets/Filters.scss';
 
 const Filters = (props) => {
 	const handleChangeStatus = (ev) => {
-		console.log('filtro por status', ev.target.value);
+		const statusValue = ev.target.value;
+		return props.handleFilterStatus(statusValue);
 	};
 
 	const handleClickGender = (ev) => {
