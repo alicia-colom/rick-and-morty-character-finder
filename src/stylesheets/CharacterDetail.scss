@@ -24,25 +24,38 @@
 			box-shadow: 0 0 5px 10px rgba(71, 181, 205, 0.5);
 		}
 		&--info {
-		margin-top: 30px;
-
+			width: 250px;
+			height: 210px;
+			margin-top: 30px;
+			padding: 15px 30px 30px 30px;
+			border-radius: 40px;
+			background-color: rgba(71, 181, 205, 0.3);
+			box-shadow: 0 0 5px 10px rgba(3, 5, 5, 0.3);
 		}
 	}
 }
 .detail {
-	padding: 15px 25px;
-	border-radius: 40px;
-	background-color: rgba(71, 181, 205, 0.3);
-	box-shadow: 0 0 5px 10px rgba(3, 5, 5, 0.3);
-
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	&__name {
 		margin: 0;
+		padding-top: 10px;
 		font-size: 32px;
 		color: #47b5cd;
 		text-shadow: 2px 2px #122988;
 	}
+	&__statusIcon {
+		width: 70px;
+		position: absolute;
+		top: 740px;
+		left: 255px;
+	}
 	&__episodes {
 		&--list {
 		}
+	}
+	p {
+		margin: 0;
 	}
 }

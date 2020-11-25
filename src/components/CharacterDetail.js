@@ -2,6 +2,8 @@ import '../stylesheets/CharacterDetail.scss';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import deadIcon from '../images/death-icon.png';
+import aliveIcon from '../images/yay-icon.svg';
 
 const CharacterDetail = (props) => {
 	// Reemplazar url por número de episodio
@@ -33,6 +35,12 @@ const CharacterDetail = (props) => {
 					/>
 					<div className="character-detail__container--info detail">
 						<h2 className="detail__name">{props.detail.name}</h2>
+						<img
+							src={props.detail.status === 'Dead' ? deadIcon : aliveIcon}
+							alt="Status icon"
+							title="Status of the character"
+							className="detail__statusIcon"
+						/>
 						<p>
 							<b>Status: </b>
 							{props.detail.status}
