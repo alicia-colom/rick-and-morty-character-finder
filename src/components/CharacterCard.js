@@ -6,8 +6,8 @@ const CharacterCard = (props) => {
 		<article className="character-card">
 			<img
 				src={props.character.image}
-				alt={'Imagen de ' + props.character.name}
-				title={'Personaje: ' + props.character.name}
+				alt={'Here will apperas the face of ' + props.character.name}
+				title={'This is ' + props.character.name}
 				className="character-card__img"
 			/>
 			<div className="character-card__info">

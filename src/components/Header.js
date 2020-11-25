@@ -9,8 +9,8 @@ const Header = (props) => {
 				<img
 					className="header__logo"
 					src={logoRM}
-					alt="Logo Rick y Morty"
-					title="Volver al inicio"
+					alt="Logo Rick and Morty"
+					title="Back to landing page"
 				/>
 			</Link>
 		</header>

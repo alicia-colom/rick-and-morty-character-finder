@@ -1,9 +1,9 @@
 .character-detail {
 	margin: 50px;
+	height: 60vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	text-align: center;
+	justify-content: flex-start;
 	&__link {
 		color: #efefef;
 		border-radius: 40px;
@@ -12,16 +12,22 @@
 		text-decoration: none;
 		text-shadow: 1px 2px #122988;
 		padding: 10px 20px;
-		margin-bottom: 10px;
-		align-self: flex-end;
+		margin-bottom: 25px;
+		align-self: center;
+		&:hover {
+			color: #fefefe;
+			text-shadow: 1px 2px #47b5cd;
+			background-color: #122988;
+			box-shadow: 0 0 10px 10px rgba(71, 181, 205, 0.5);
+		}
 	}
 
 	&__container {
 		text-align: left;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, 300px);
+		grid-template-columns: repeat(auto-fit, 300px);
 		grid-gap: 35px;
-		justify-content: baseline;
+		justify-content: center;
 		align-items: flex-end;
 
 		&--img {
@@ -44,6 +50,9 @@
 			border-radius: 40px;
 			background-color: rgba(71, 181, 205, 0.3);
 			box-shadow: 0 0 5px 10px rgba(3, 5, 5, 0.3);
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 			@media all and (max-width: 350px) {
 				max-width: 210px;
 			}
@@ -51,9 +60,6 @@
 	}
 }
 .detail {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
 	&__name {
 		margin: 0;
 		padding-top: 10px;
@@ -65,7 +71,11 @@
 		width: 65px;
 	}
 	&__episodes {
+		display: flex;
+		justify-content: space-between;
 		&--list {
+			color: #122988;
+			font-size: 14px;
 		}
 	}
 	p {

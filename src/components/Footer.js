@@ -12,7 +12,7 @@ const Footer = () => {
 						className="footer__copyright--author"
 						href="https://www.linkedin.com/in/aliciacolomortega/"
 						target="_blank"
-						title="Enlace a LinkedIn de Alicia Colom"
+						title="Link to Alicia Colom LinkedIn"
 					>
 						{' '}
 						Alicia Colom{' '}
@@ -22,10 +22,8 @@ const Footer = () => {
 					className="footer__small"
 					href="https://twitter.com/hashtag/PromoKizzy?src=hashtag_click"
 					target="_blank"
-					title="Enlace al hashtag de Twitter de #PromoKizzy"
-				>
-					Adalab #PromoKizzy 2020
-				</a>
+					title="Link to Twitter hashtag #PromoKizzy"
+				> Twitter #PromoKizzy </a>
 			</footer>
 		</>
 	);

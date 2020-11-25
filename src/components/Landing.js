@@ -16,7 +16,7 @@ const Landing = () => {
 				<Link
 					to="/home"
 					className="landing__link"
-					title="Ir al buscador de Rick y Morty"
+					title="Go to Rick and Morty finder"
 				>
 					Let's go!
 				</Link>

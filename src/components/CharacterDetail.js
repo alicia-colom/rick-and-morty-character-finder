@@ -6,7 +6,7 @@ import deadIcon from '../images/death-icon.png';
 import aliveIcon from '../images/yay-icon.svg';
 
 const CharacterDetail = (props) => {
-	// Reemplazar url por número de episodio
+	// Replace episodenumber instead url
 	const allEpisodes = props.detail.episode.map((eachEpisode, i) => {
 		const newString = eachEpisode.replace(
 			'https://rickandmortyapi.com/api/episode/',
@@ -14,7 +14,7 @@ const CharacterDetail = (props) => {
 		);
 		return (
 			<option className="detail__episodes--item" value={eachEpisode}>
-				{newString}
+				E{newString}
 			</option>
 		);
 	});
@@ -24,13 +24,14 @@ const CharacterDetail = (props) => {
 			<Header />
 
 			<main className="character-detail">
-				<Link to="/home" className="character-detail__link">
+				<Link to="/home" className="character-detail__link" title="Back to your search">
 					Back to search
 				</Link>
 				<div className="character-detail__container">
 					<img
 						src={props.detail.image}
-						alt=""
+						alt={'Image of ' + props.detail.name}
+						title={'This is ' + props.detail.name}
 						className="character-detail__container--img"
 					/>
 					<div className="character-detail__container--info detail">
@@ -61,13 +62,17 @@ const CharacterDetail = (props) => {
 						</p>
 						<div className="detail__episodes">
 							<label htmlFor="episodes">
-								<b>Episodes: </b>
-								{props.detail.episode.length}{' '}
+								<b>Appears in </b>
+								{props.detail.episode.length === 41
+									? 'all'
+									: props.detail.episode.length}{' '}
+								episodes
 							</label>
 							<select
 								className="detail__episodes--list"
 								id="episodes"
 								name="episodes"
+								title="Number of episodes where character appears"
 							>
 								{allEpisodes}
 							</select>

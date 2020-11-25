@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# EVALUACIÓN FINAL · REACT
+### ***Alicia Colom Ortega***
+------------
+*Ejercicio de evaluación final de programación con el framework React para el módulo 3 de Adalab*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Rick and Morty](./src/images/Rick-Morty_men-in-black.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+## **OBJETIVO**
+Se trata de una página web desarrollada en **React**, con un listado de personajes de la serie Rick and Morty, dónde podemosfiltrar por el nombre del personaje. 
 
-### `npm start`
+## **DESARROLLO**
+> 1. **Listado de personajes**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Petición al API de servicio de datos, a través de campo de búsqueda a través de fetch, recibiendo de vuelta un JSON con la información de los personajes. 
+Endpoint del servicio de datos : https://rickandmortyapi.com/documentation/#get-all-characters
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> 2. **Pintar un listado de personajes**
 
-### `npm test`
+Recorriendo el array de datos con un método map, extrayendo y pintando información del personaje.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> 3. **Filtrado de personajes**
 
-### `npm run build`
+A través de un campo de texto se buscan personajes por su nombre. Al escribir en este, se filtran en la interfaz los personajes que contienen las letras escritas en el input. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> 4. **Utilizar React Router**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Al hacer click sobre alguna de las tarjetas se pinta la tarjeta clicada a pantalla completa con el detalle de cada personaje. 
+En los detalles aparece la siguiente información: imagen, nombre, especie, planeta de origen, género,  número de episodios en los que aparece el personaje, listado de episodios, y si está vivo o muerto.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## **Estructura de Componentes**
 
-### `npm run eject`
+```
+src
+ ├─ public
+ |  ├─ index.hmtl
+ |  └─ favicon.ico
+ |
+ ├─ components
+ |  ├─ App.js _______ comp. principal
+ |  ├─ Landing.js _______ comp. de aterrizaje a la web
+ |  ├─ CharacterList.js _______ listado de personajes e input de búsqueda
+ |  ├─ CharacterCard.js _______ tarjeta de personaje que se renderiza en CharacterList.js
+ |  ├─ CharacterDetail.js _______ comp. con información general del personaje
+ |  ├─ Header.js _______ cabecera con logo y link a landing
+ |  ├─ Footer.js _______ pie de página con datos de autoría
+ |  ├─ Error.js _______ comp. de personaje inexistente
+ |  ├─ NotResults.js _______ comp. de búsqueda fallida
+ |  └─ Filters.js _______ comp. de trabajo para filtrados
+ |
+ ├─ images
+ |  └─ ...
+ |
+ ├─ services
+ |  └─ api.js _______ solicitud fetch a API
+ |
+ ├─ stylesheets
+ |  ├─ CharacterList.scss
+ |  ├─ CharacterCard.scss
+ |  ├─ CharacterDetail.scss
+ |  ├─ Error.scss
+ |  └─ ...
+ |
+ ├─ index.js
+ └─ index.scss
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Detalles de calidad
+- Incluir el campo de texto dentro de una etiqueta `<form>` para cuidar la semántica.
+- Impedir que el navegador envíe una petición o cambie de ruta al dar a intro sobre el campo de texto vacío aplicando un `prevent event default`.
+- ***Mostrar un mensaje de error al realizar una búsqueda por un personaje que no existe.***
+- ***Filtrar tanto en mayúsculas como en minúsculas desde el campo de texto aplicando un método toLowerCase.***
+- ***Al entrar en detalles del personaje y volver al listado de personajes se debe poder leer el texto que se había incluido inicialmente en el campo de texto.***
+ Para ello se recoge el valor del input y aplicando lifting se guarda en el estado del componente principal para bajarlo nuevamente al value del componente filters.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### *BONUS:* Mejoras visuales
+- Mostrar el estado del personaje con un icono.
+- Usar un sistema de grid para pintar el listado de personajes.
+- Cuidar el funcionamiento del responsive en dispositivos pequeños.
 
-## Learn More
+### *BONUS:* URL compartible
+- La URL del detalle del personaje debe ser compartible y poder acceder a ella visitándola directamente desde el navegador.
+- Mostrar un mensaje de error si se introduce una ruta inexistente en el navegador.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### *BONUS:* Ordenación
+- ***Ordenar alfabéticamente el listado de personajes utilizando un método sort.***
+___________
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# RESULTADO:
+### **http://beta.adalab.es/modulo-3-evaluacion-final-alicia-colom/#/**

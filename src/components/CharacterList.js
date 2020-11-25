@@ -5,33 +5,32 @@ import Filters from './Filters';
 import Footer from './Footer';
 import CharacterCard from './CharacterCard';
 // import ReactDOM from 'react';
-// import NotResults from './NotResults';
-// import imgNotResults from '../images/Rick-Morty_men-in-black.png';
+import NotResults from './NotResults';
+import imgNotResults from '../images/Rick-Morty_men-in-black.png';
 
 const CharacterList = (props) => {
-	// Revisión si hay resultados
-	const returning = () => {
-		// debugger;
-		if (!props.resultList) {
-			return props.children;
-		} else {
-			return <ul className="character-list__list">{characters}</ul>;
-		}
-	};
+// 	// No result function
+// 	const returning = () => {
+// 		// debugger;
+// 		 (props.resultList.length !== 0) ? (<ul className="character-list__list">{characters}</ul>)
+// 		: 
+// 		(<NotResults/>)
+// 		}
+// 	};
 
-	// Gestión datos recibidos
+	// Render character data
 	const characters = props.resultList.map((eachCharacter) => (
 		<li key={eachCharacter.id}>
 			<CharacterCard character={eachCharacter} />
 		</li>
 	));
 
-	// Evitar submit en input
+	// Prevent submit in input
 	const handleSubmit = (ev) => {
 		ev.preventDefault();
 	};
 
-	// Manejando input
+	// Handle input
 	const handleChange = (ev) => {
 		props.handleInputValue(ev.currentTarget.value);
 	};
@@ -46,7 +45,7 @@ const CharacterList = (props) => {
 						htmlFor="searchInput"
 						className="character-list__form--legend"
 					>
-						¿Qué personaje buscas?
+						Who are you looking for?
 					</legend>
 					<div className="character-list__form--container">
 						<i
@@ -57,8 +56,8 @@ const CharacterList = (props) => {
 							id="searchInput"
 							type="text"
 							className="character-list__form--input"
-							title="Escribe el personaje que quieres buscar"
-							placeholder="Escribe aquí..."
+							title="Enter here the name of the character you are looking for"
+							placeholder="Write right here..."
 							onSubmit={handleSubmit}
 							onChange={handleChange}
 						/>
@@ -66,25 +65,16 @@ const CharacterList = (props) => {
 				</form>
 				<Filters resultList={props.resultList} />
 
-				<div>{returning()}</div>
+				{(props.resultList.length !== 0) 
+				? 
+				(<ul className="character-list__list">{characters}</ul>) 
+				: 
+				(<NotResults/>)}
 			</main>
 
 			<Footer />
 		</>
 	);
 };
-
-// ReactDOM.render(
-// 	<div styling="info">
-// 		<h2>There is nothing in here</h2>
-// 		<img
-// 			src={imgNotResults}
-// 			alt="Rick and Morty keep driving"
-// 			className="imgNotResults"
-// 		/>
-// 		<h2>Keep browsing</h2>
-// 	</div>,
-// 	document.getElementById('root')
-// );
 
 export default CharacterList;
