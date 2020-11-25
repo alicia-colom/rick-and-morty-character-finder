@@ -7,7 +7,6 @@ import CharacterCard from './CharacterCard';
 import NotResults from './NotResults';
 
 const CharacterList = (props) => {
-	// console.log(props.userSearch);
 	// No result function
 	const returning = () => {
 		if (props.resultList.length === 0) {
@@ -57,7 +56,7 @@ const CharacterList = (props) => {
 							className="character-list__form--input"
 							title="Enter here the name of the character you are looking for"
 							placeholder="Write right here..."
-							// value={"busqueda " + props.userSearch}
+							value={props.userSearch}
 							onSubmit={handleSubmit}
 							onChange={handleChange}
 						/>
@@ -70,7 +69,6 @@ const CharacterList = (props) => {
 				/>
 
 				<div>{returning()}</div>
-
 			</main>
 
 			<Footer />

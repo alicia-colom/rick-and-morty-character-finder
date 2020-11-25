@@ -12,8 +12,6 @@ const App = () => {
 	const [initialList, setInitialList] = useState();
 	const [resultList, setResultList] = useState([]);
 
-	// console.log(userSearch);
-
 	// Handle data API
 	useEffect(() => {
 		getDataApi(userSearch).then((dataApi) => {
@@ -65,6 +63,7 @@ const App = () => {
 					<CharacterList
 						initialList={initialList}
 						resultList={resultList}
+						userSearch={userSearch}
 						handleInputValue={handleInputValue}
 						handleFilterStatus={handleFilterStatus}
 						handleFilterGender={handleFilterGender}

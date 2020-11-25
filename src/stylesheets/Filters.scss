@@ -11,6 +11,9 @@
 	border: 3px solid #47b5cd;
 	font-size: 15px;
 	text-shadow: 1px 1px black;
+	@media all and (max-width: 4510px) {
+		min-width: 290px;
+	}
 
 	&__fieldset {
 		border: 0;
@@ -20,5 +23,10 @@
 		font-size: 14px;
 	}
 	&__gender {
+		@media all and (max-width: 495px) {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+		}
 	}
 }

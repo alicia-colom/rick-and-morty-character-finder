@@ -28,31 +28,36 @@ const Filters = (props) => {
 			</fieldset>
 
 			<fieldset className="filter__fieldset">
-				<label htmlFor="Female">Female</label>
-				<input
-					type="radio"
-					id="Female"
-					name="gender"
-					value="Female"
-					className="filter__gender"
-					onChange={handleClickGender}
-				/>
-				<label htmlFor="Male">Male</label>
-				<input
-					type="radio"
-					id="Male"
-					name="gender"
-					value="Male"
-					onChange={handleClickGender}
-				/>
-				<label htmlFor="unknown">unknown</label>
-				<input
-					type="radio"
-					id="unknown"
-					name="gender"
-					value="unknown"
-					onChange={handleClickGender}
-				/>
+				<div className="filter__gender">
+					<label htmlFor="Female">Female</label>
+					<input
+						type="radio"
+						id="Female"
+						name="gender"
+						value="Female"
+						onChange={handleClickGender}
+					/>
+				</div>
+				<div className="filter__gender">
+					<label htmlFor="Male">Male</label>
+					<input
+						type="radio"
+						id="Male"
+						name="gender"
+						value="Male"
+						onChange={handleClickGender}
+					/>
+				</div>
+				<div className="filter__gender">
+					<label htmlFor="unknown">unknown</label>
+					<input
+						type="radio"
+						id="unknown"
+						name="gender"
+						value="unknown"
+						onChange={handleClickGender}
+					/>
+				</div>
 			</fieldset>
 		</form>
 	);
