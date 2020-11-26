@@ -11,27 +11,6 @@ const Filters = (props) => {
 		return props.handleFilterGender(genderValue);
 	};
 
-	// Filtro para species
-	const specieList = props.initialList.map((eachCharacter) => {
-		/// comparar si la specie ya está en la lista y no incluirla
-		return (
-			<option key={eachCharacter.id} value={eachCharacter.species}>
-				{eachCharacter.species}
-			</option>
-		);
-	});
-
-	const handleChangeSpecie = (ev) => {
-		console.log('filtro por specie', ev.target.value);
-	};
-
-	const handleChangeSort = (ev) => {
-		console.log('filtro por alfabetico', ev.target.checked);
-		const isSort = ev.target.checked;
-		return props.handleSort(isSort);
-	};
-	console.log(props.handleSort);
-
 	return (
 		<form className="filter">
 			<fieldset className="filter__fieldset">
@@ -50,7 +29,7 @@ const Filters = (props) => {
 			</fieldset>
 
 			<fieldset className="filter__fieldset">
-				<div className="filter__gender">
+			<div className="filter__gender">
 					<label htmlFor="All">All</label>
 					<input
 						type="radio"
@@ -89,31 +68,6 @@ const Filters = (props) => {
 						name="gender"
 						value="unknown"
 						onChange={handleClickGender}
-					/>
-				</div>
-			</fieldset>
-
-			<fieldset className="filter__fieldset">
-				<label htmlFor="specie">Species: </label>
-				<select
-					className="filter__select"
-					name="specie"
-					id="specie"
-					onChange={handleChangeSpecie}
-				>
-					{specieList}
-				</select>
-			</fieldset>
-
-			<fieldset className="filter__fieldset">
-				<div className="filter__gender">
-					<label htmlFor="sort">Sort by name</label>
-					<input
-						type="checkbox"
-						id="sort"
-						name="gender"
-						value="isSort"
-						onChange={handleChangeSort}
 					/>
 				</div>
 			</fieldset>

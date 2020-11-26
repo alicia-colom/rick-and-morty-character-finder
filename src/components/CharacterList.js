@@ -18,6 +18,10 @@ const CharacterList = (props) => {
 	};
 
 	// Render character data
+
+	// const listaparapintar =
+	// 	props.resultList.length !== 0 ? props.resultList : props.initialList;
+
 	const characters = props.resultList.map((eachCharacter) => (
 		<li key={eachCharacter.id}>
 			<Link
@@ -70,9 +74,11 @@ const CharacterList = (props) => {
 						</div>
 					</form>
 					<Filters
+						initialList={props.initialList}
 						resultList={props.resultList}
 						handleFilterStatus={props.handleFilterStatus}
 						handleFilterGender={props.handleFilterGender}
+						handleSort={props.handleSort}
 					/>
 
 					<div>{returning()}</div>
