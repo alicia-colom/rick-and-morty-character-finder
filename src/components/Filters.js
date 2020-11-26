@@ -21,9 +21,10 @@ const Filters = (props) => {
 					id="status"
 					onChange={handleChangeStatus}
 				>
+					<option value="All">All</option>
 					<option value="Alive">Alive</option>
 					<option value="Dead">Dead</option>
-					<option value="unknown">unknown</option>
+					<option value="unknown">Unknown</option>
 				</select>
 			</fieldset>
 
@@ -49,7 +50,7 @@ const Filters = (props) => {
 					/>
 				</div>
 				<div className="filter__gender">
-					<label htmlFor="unknown">unknown</label>
+					<label htmlFor="unknown">Unknown</label>
 					<input
 						type="radio"
 						id="unknown"

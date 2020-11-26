@@ -1,5 +1,4 @@
 import '../stylesheets/CharacterCard.scss';
-import { Link } from 'react-router-dom';
 
 const CharacterCard = (props) => {
 	return (
@@ -15,12 +14,7 @@ const CharacterCard = (props) => {
 				<p className="character-card__info--paragraph">
 					{props.character.species}
 				</p>
-				<Link
-					to={`/info/${props.character.name}`}
-					className="character-card__info--link"
-				>
-					+ info
-				</Link>
+				<small className="character-card__info--small">+ info</small>
 			</div>
 		</article>
 	);

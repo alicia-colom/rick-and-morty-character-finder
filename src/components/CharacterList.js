@@ -1,4 +1,5 @@
 import '../stylesheets/CharacterList.scss';
+import { Link } from 'react-router-dom';
 import Header from './Header';
 import Loader from './Loader';
 import Filters from './Filters';
@@ -19,7 +20,12 @@ const CharacterList = (props) => {
 	// Render character data
 	const characters = props.resultList.map((eachCharacter) => (
 		<li key={eachCharacter.id}>
-			<CharacterCard character={eachCharacter} />
+			<Link
+				to={`/info/${eachCharacter.name}`}
+				className="character-list__list--link"
+			>
+				<CharacterCard character={eachCharacter} />
+			</Link>
 		</li>
 	));
 
@@ -39,10 +45,7 @@ const CharacterList = (props) => {
 
 			<main className="character-list">
 				<form action="" className="character-list__form">
-					<label
-						htmlFor="searchInput"
-						className="character-list__form--label"
-					>
+					<label htmlFor="searchInput" className="character-list__form--label">
 						Who are you looking for?
 					</label>
 					<div className="character-list__form--container">

@@ -2,7 +2,7 @@
 	background-color: rgba(71, 181, 205, 0.6);
 	height: 50px;
 	margin: 0 30px;
-	padding: 10px;
+	padding: 0 10px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -19,6 +19,7 @@
 		border: 0;
 		display: flex;
 		flex-direction: row;
+		align-items: center;
 		@media all and (max-width:490px) {
 			flex-direction: column;
 			flex-wrap: wrap;
