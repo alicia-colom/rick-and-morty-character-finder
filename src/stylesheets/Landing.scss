@@ -1,67 +1,75 @@
 .landing {
-	height: 70vh;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
+	justify-content: flex-start;
 	text-align: center;
-	&__title {
-		margin: 0 auto;
-		padding: 20px;
-		width: 60vw;
-		font-size: 38px;
-		@media all and (max-width: 500px) {
-			padding: 30px 10px;
-			font-size: 28px;
-			width: 70vw;
-		}
-	}
-	&__link {
-		margin: 10px auto;
-		color: #efefef;
-		font-weight: bold;
-		font-size: 32px;
-		width: 150px;
-		padding: 20px;
-		border-radius: 40px;
-		background-color: #47b5cd;
-		text-decoration: none;
-		text-shadow: 1px 2px #122988;
-		animation-delay: 2s;
-		animation-duration: 5s;
-		animation-name: upDown;
-		animation-iteration-count: 5;
-		animation-timing-function: ease;
-		@keyframes upDown {
-			from {
-				transform: translate(0, 0);
-			}
-			5% {
-				transform: translate(0, 8px);
-			}
-			10% {
-				transform: translate(0, 3px);
-			}
-			15% {
-				transform: translate(0, 8px);
-			}
-			20% {
-				transform: translate(0, 0);
-			}
-			to {
-				transform: translate(0, 0);
+	overflow: scroll;
+	&__main {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		&--title {
+			margin: 0 auto;
+			padding: 20px;
+			width: 60vw;
+			font-size: 38px;
+			@media all and (max-width: 500px) {
+				padding: 30px 10px;
+				font-size: 28px;
+				width: 75vw;
 			}
 		}
-		&:hover {
-			color: #fefefe;
-			text-shadow: 1px 2px #47b5cd;
-			background-color: #122988;
-			box-shadow: 0 0 10px 10px rgba(71, 181, 205, 0.5);
-		}
-		@media all and (max-width: 500px) {
-			margin-bottom: 40px;
-		}
-		@media all and (max-width: 700px) {
-			margin-bottom: 0;
+		&--link {
+			margin: 10px auto;
+			color: #efefef;
+			font-weight: bold;
+			font-size: 32px;
+			width: 150px;
+			padding: 20px;
+			border-radius: 40px;
+			background-color: #47b5cd;
+			text-decoration: none;
+			text-shadow: 1px 2px #122988;
+			animation-delay: 2s;
+			animation-duration: 5s;
+			animation-name: upDown;
+			animation-iteration-count: 5;
+			animation-timing-function: ease;
+			@keyframes upDown {
+				from {
+					transform: translate(0, 0);
+				}
+				5% {
+					transform: translate(0, 8px);
+				}
+				10% {
+					transform: translate(0, 3px);
+				}
+				15% {
+					transform: translate(0, 8px);
+				}
+				20% {
+					transform: translate(0, 0);
+				}
+				to {
+					transform: translate(0, 0);
+				}
+			}
+			&:hover {
+				color: #fefefe;
+				text-shadow: 1px 2px #47b5cd;
+				background-color: #122988;
+				box-shadow: 0 0 10px 10px rgba(71, 181, 205, 0.5);
+			}
+			@media all and (max-width: 500px) {
+				margin-bottom: 40px;
+			}
+			@media all and (max-width: 700px) {
+				margin-bottom: 0;
+			}
 		}
 	}
 }

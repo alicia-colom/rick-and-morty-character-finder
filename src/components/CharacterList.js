@@ -41,40 +41,45 @@ const CharacterList = (props) => {
 
 	return (
 		<>
-			<Header />
+			<div className="character-list">
+				<Header />
 
-			<main className="character-list">
-				<form action="" className="character-list__form">
-					<label htmlFor="searchInput" className="character-list__form--label">
-						Who are you looking for?
-					</label>
-					<div className="character-list__form--container">
-						<i
-							className="fa fa-search character-list__form--icon"
-							aria-hidden="true"
-						></i>
-						<input
-							id="searchInput"
-							type="text"
-							className="character-list__form--input"
-							title="Enter here the name of the character you are looking for"
-							placeholder="Write right here..."
-							value={props.userSearch}
-							onSubmit={handleSubmit}
-							onChange={handleChange}
-						/>
-					</div>
-				</form>
-				<Filters
-					resultList={props.resultList}
-					handleFilterStatus={props.handleFilterStatus}
-					handleFilterGender={props.handleFilterGender}
-				/>
+				<main className="character-list__main">
+					<form action="" className="character-list__form">
+						<label
+							htmlFor="searchInput"
+							className="character-list__form--label"
+						>
+							Who are you looking for?
+						</label>
+						<div className="character-list__form--container">
+							<i
+								className="fa fa-search character-list__form--icon"
+								aria-hidden="true"
+							></i>
+							<input
+								id="searchInput"
+								type="text"
+								className="character-list__form--input"
+								title="Enter here the name of the character you are looking for"
+								placeholder="Write right here..."
+								value={props.userSearch}
+								onSubmit={handleSubmit}
+								onChange={handleChange}
+							/>
+						</div>
+					</form>
+					<Filters
+						resultList={props.resultList}
+						handleFilterStatus={props.handleFilterStatus}
+						handleFilterGender={props.handleFilterGender}
+					/>
 
-				<div>{returning()}</div>
-			</main>
+					<div>{returning()}</div>
+				</main>
 
-			<Footer />
+				<Footer />
+			</div>
 		</>
 	);
 };

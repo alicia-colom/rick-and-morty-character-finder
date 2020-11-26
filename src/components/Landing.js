@@ -6,23 +6,23 @@ import Footer from './Footer';
 const Landing = () => {
 	return (
 		<>
-			<Header />
-
-			<main className="landing">
-				<h1 className="landing__title">
-					Find the craziest characters from your favourite TV show and know them
-					better
-				</h1>
-				<Link
-					to="/home"
-					className="landing__link"
-					title="Go to Rick and Morty finder"
-				>
-					Let's go!
-				</Link>
-			</main>
-
-			<Footer />
+			<div className="landing">
+				<Header />
+				<main className="landing__main">
+					<h1 className="landing__main--title">
+						Find the craziest characters from your favourite TV show and know
+						them better
+					</h1>
+					<Link
+						to="/home"
+						className="landing__main--link"
+						title="Go to Rick and Morty finder"
+					>
+						Let's go!
+					</Link>
+				</main>
+				<Footer />
+			</div>
 		</>
 	);
 };

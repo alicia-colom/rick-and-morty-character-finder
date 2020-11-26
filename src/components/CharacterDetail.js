@@ -21,76 +21,74 @@ const CharacterDetail = (props) => {
 
 	return (
 		<>
-			<Header />
+			<div className="character-detail">
+				<Header />
 
-			<main className="character-detail">
-				<Link
-					to="/home"
-					className="character-detail__link"
-					title="Back to your search"
-				>
-					Back to search
-				</Link>
-				<div className="character-detail__container">
-					<img
-						src={props.detail.image}
-						alt={'Image of ' + props.detail.name}
-						title={'This is ' + props.detail.name}
-						className="character-detail__container--img"
-					/>
-					<div className="character-detail__container--info detail">
-						<div className="character-detail__container--header">
-							<h2 className="detail__name">{props.detail.name}</h2>
-							<img
-								src={props.detail.status === 'Dead' ? deadIcon : aliveIcon}
-								alt="Status icon"
-								title="Status of the character"
-								className="detail__statusIcon"
-							/>
-						</div>{' '}
-						<p>
-							<b>Status: </b>
-							{props.detail.status}
-						</p>
-						<p>
-							<b>Specie: </b>
-							{props.detail.species}
-						</p>
-						<p>
-							<b>Gender: </b>
-							{props.detail.gender}
-						</p>
-						<p>
-							<b>Origin: </b>
-							{props.detail.origin.name}
-						</p>
-						<div className="detail__episodes">
-							<label htmlFor="episodes">
-								<b>Appears in </b>
-								{props.detail.episode.length === 41
-									? 'all'
-									: props.detail.episode.length}{' '}
-								episodes
-							</label>
-							<select
-								className="detail__episodes--list"
-								id="episodes"
-								name="episodes"
-								title="Number of episodes where character appears"
-							>
-								<option
-									value="List"
+				<main className="character-detail__main">
+					<Link
+						to="/home"
+						className="character-detail__link"
+						title="Back to your search"
+					>
+						Back to search
+					</Link>
+					<div className="character-detail__container">
+						<img
+							src={props.detail.image}
+							alt={'Image of ' + props.detail.name}
+							title={'This is ' + props.detail.name}
+							className="character-detail__container--img"
+						/>
+						<div className="character-detail__container--info detail">
+							<div className="character-detail__container--header">
+								<h2 className="detail__name">{props.detail.name}</h2>
+								<img
+									src={props.detail.status === 'Dead' ? deadIcon : aliveIcon}
+									alt="Status icon"
+									title="Status of the character"
+									className="detail__statusIcon"
+								/>
+							</div>{' '}
+							<p>
+								<b>Status: </b>
+								{props.detail.status}
+							</p>
+							<p>
+								<b>Specie: </b>
+								{props.detail.species}
+							</p>
+							<p>
+								<b>Gender: </b>
+								{props.detail.gender}
+							</p>
+							<p>
+								<b>Origin: </b>
+								{props.detail.origin.name}
+							</p>
+							<div className="detail__episodes">
+								<label htmlFor="episodes">
+									<b>Appears in </b>
+									{props.detail.episode.length === 41
+										? 'all'
+										: props.detail.episode.length}{' '}
+									episodes
+								</label>
+								<select
+									className="detail__episodes--list"
+									id="episodes"
+									name="episodes"
+									title="Number of episodes where character appears"
 								>
-									List
-								</option>
-								{allEpisodes}
-							</select>
+									<option value="List">List</option>
+									{allEpisodes}
+								</select>
+							</div>
 						</div>
 					</div>
-				</div>
-			</main>
+				</main>
 
-			<Footer />
+				<Footer />
+			</div>
 		</>
 	);
 };
