@@ -9,14 +9,13 @@ import getDataApi from '../services/api';
 const App = () => {
 	// States
 	const [userSearch, setUserSearch] = useState('');
+	const [initialList, setInitialList] = useState();
 	const [resultList, setResultList] = useState([]);
-	const [filterList, setFilterList] = useState();
-	// console.log(resultList, filterList);
-	// console.log(userSearch);
 
 	// Handle data API
 	useEffect(() => {
 		getDataApi(userSearch).then((dataApi) => {
+			setInitialList(dataApi.results);
 			setResultList(dataApi.results);
 		});
 	}, [userSearch]);
@@ -39,12 +38,19 @@ const App = () => {
 		);
 	};
 
-	// Handle filter status
+	// Handle filters
 	const handleFilterStatus = (value) => {
-		const filterStatus = resultList.filter(
+		const filterStatus = initialList.filter(
 			(eachItem) => eachItem.status === value
 		);
-		return setFilterList(filterStatus);
+		return setResultList(filterStatus);
+	};
+
+	const handleFilterGender = (value) => {
+		const filterGender = initialList.filter(
+			(eachItem) => eachItem.gender === value
+		);
+		return setResultList(filterGender);
 	};
 
 	return (
@@ -55,10 +61,12 @@ const App = () => {
 				</Route>
 				<Route exact path="/home">
 					<CharacterList
+						initialList={initialList}
 						resultList={resultList}
+						userSearch={userSearch}
 						handleInputValue={handleInputValue}
 						handleFilterStatus={handleFilterStatus}
-						filterList={filterList}
+						handleFilterGender={handleFilterGender}
 					/>
 				</Route>
 				<Route
@@ -69,6 +77,6 @@ const App = () => {
 			</Switch>
 		</>
 	);
-};;;
+};
 
 export default App;

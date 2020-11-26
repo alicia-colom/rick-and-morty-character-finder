@@ -7,7 +7,7 @@
 
 
 ## **OBJETIVO**
-Se trata de una página web desarrollada en **React**, con un listado de personajes de la serie Rick and Morty, dónde podemosfiltrar por el nombre del personaje. 
+Se trata de una página web desarrollada en **React**, con un listado de personajes de la serie Rick and Morty, dónde podemos realizar la búsqueda por nombre y filtrar por género y/o estado del personaje. 
 
 ## **DESARROLLO**
 > 1. **Listado de personajes**
@@ -17,11 +17,12 @@ Endpoint del servicio de datos : https://rickandmortyapi.com/documentation/#get-
 
 > 2. **Pintar un listado de personajes**
 
-Recorriendo el array de datos con un método map, extrayendo y pintando información del personaje.
+Recorriendo el array de datos con un método map, extrayendo y pintando información de cada personaje.
 
 > 3. **Filtrado de personajes**
 
-A través de un campo de texto se buscan personajes por su nombre. Al escribir en este, se filtran en la interfaz los personajes que contienen las letras escritas en el input. 
+A través de un dos `<input>` (de tipo `radio` y de tipo `select`) se realiza un filtrado en la búsqueda realizada, pudiendo filtrar por uno o por los dos conceptos: GENERO y ESTADO. 
+Una vez filtrados, se renderiza de nuevo y aparece en la interfaz los personajes que cumplen esos requisitos. 
 
 > 4. **Utilizar React Router**
 
@@ -71,9 +72,7 @@ src
 ## Detalles de calidad
 - Incluir el campo de texto dentro de una etiqueta `<form>` para cuidar la semántica.
 - Impedir que el navegador envíe una petición o cambie de ruta al dar a intro sobre el campo de texto vacío aplicando un `prevent event default`.
-- ***Mostrar un mensaje de error al realizar una búsqueda por un personaje que no existe.***
-- ***Filtrar tanto en mayúsculas como en minúsculas desde el campo de texto aplicando un método toLowerCase.***
-- ***Al entrar en detalles del personaje y volver al listado de personajes se debe poder leer el texto que se había incluido inicialmente en el campo de texto.***
+- Al entrar en detalles del personaje y volver al listado de personajes se debe poder leer el texto que se había incluido inicialmente en el campo de texto.
  Para ello se recoge el valor del input y aplicando lifting se guarda en el estado del componente principal para bajarlo nuevamente al value del componente filters.
 
 ### *BONUS:* Mejoras visuales
@@ -85,8 +84,9 @@ src
 - La URL del detalle del personaje debe ser compartible y poder acceder a ella visitándola directamente desde el navegador.
 - Mostrar un mensaje de error si se introduce una ruta inexistente en el navegador.
 
-### *BONUS:* Ordenación
-- ***Ordenar alfabéticamente el listado de personajes utilizando un método sort.***
+### Futuras implementaciones: 
+- Mostrar un mensaje de error al realizar una búsqueda por un personaje que no existe.
+- Ordenar alfabéticamente el listado de personajes utilizando un método sort.
 ___________
 
 # RESULTADO:

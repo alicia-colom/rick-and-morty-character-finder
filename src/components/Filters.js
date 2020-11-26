@@ -7,18 +7,8 @@ const Filters = (props) => {
 	};
 
 	const handleClickGender = (ev) => {
-		console.log('filtro por gender', ev.target.value);
-	};
-
-	// Filtro para species
-	const specieList = props.resultList.map((eachCharacter) => (
-		<option key={eachCharacter.id} value={eachCharacter.species}>
-			{eachCharacter.species}
-		</option>
-	));
-
-	const handleChangeSpecie = (ev) => {
-		console.log('filtro por specie', ev.target.value);
+		const genderValue = ev.target.value;
+		return props.handleFilterGender(genderValue);
 	};
 
 	return (
@@ -38,42 +28,36 @@ const Filters = (props) => {
 			</fieldset>
 
 			<fieldset className="filter__fieldset">
-				<label htmlFor="Female">Female</label>
-				<input
-					type="radio"
-					id="Female"
-					name="gender"
-					value="Female"
-					className="filter__gender"
-					onChange={handleClickGender}
-				/>
-				<label htmlFor="Male">Male</label>
-				<input
-					type="radio"
-					id="Male"
-					name="gender"
-					value="Male"
-					onChange={handleClickGender}
-				/>
-				<label htmlFor="unknown">unknown</label>
-				<input
-					type="radio"
-					id="unknown"
-					name="gender"
-					value="unknown"
-					onChange={handleClickGender}
-				/>
-			</fieldset>
-			<fieldset className="filter__fieldset">
-				<label htmlFor="specie">Species: </label>
-				<select
-					className="filter__select"
-					name="specie"
-					id="specie"
-					onChange={handleChangeSpecie}
-				>
-					{specieList}
-				</select>
+				<div className="filter__gender">
+					<label htmlFor="Female">Female</label>
+					<input
+						type="radio"
+						id="Female"
+						name="gender"
+						value="Female"
+						onChange={handleClickGender}
+					/>
+				</div>
+				<div className="filter__gender">
+					<label htmlFor="Male">Male</label>
+					<input
+						type="radio"
+						id="Male"
+						name="gender"
+						value="Male"
+						onChange={handleClickGender}
+					/>
+				</div>
+				<div className="filter__gender">
+					<label htmlFor="unknown">unknown</label>
+					<input
+						type="radio"
+						id="unknown"
+						name="gender"
+						value="unknown"
+						onChange={handleClickGender}
+					/>
+				</div>
 			</fieldset>
 		</form>
 	);
