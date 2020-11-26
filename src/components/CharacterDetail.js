@@ -13,7 +13,7 @@ const CharacterDetail = (props) => {
 			''
 		);
 		return (
-			<option className="detail__episodes--item" value={eachEpisode}>
+			<option key={i} className="detail__episodes--item" value={eachEpisode}>
 				E{newString}
 			</option>
 		);
