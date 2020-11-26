@@ -39,12 +39,12 @@ const CharacterList = (props) => {
 
 			<main className="character-list">
 				<form action="" className="character-list__form">
-					<legend
+					<label
 						htmlFor="searchInput"
-						className="character-list__form--legend"
+						className="character-list__form--label"
 					>
 						Who are you looking for?
-					</legend>
+					</label>
 					<div className="character-list__form--container">
 						<i
 							className="fa fa-search character-list__form--icon"
