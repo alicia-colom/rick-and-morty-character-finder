@@ -23,7 +23,7 @@ const Footer = () => {
 					href="https://twitter.com/hashtag/PromoKizzy?src=hashtag_click"
 					target="_blank"
 					title="Link to Twitter hashtag #PromoKizzy"
-				> Twitter #PromoKizzy </a>
+				>2020 Adalab #PromoKizzy</a>
 			</footer>
 		</>
 	);

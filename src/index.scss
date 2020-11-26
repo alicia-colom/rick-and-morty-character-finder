@@ -16,7 +16,7 @@ code {
 
 .root {
 	color: #fefefe;
-	background-image: url(./images/Rick-Morty_space.jpg);
+	background: url(./images/Rick-Morty_space.jpg);
 	background-image: linear-gradient(
 			to bottom,
 			rgba(0, 0, 0, 0.3) 0%,
@@ -25,11 +25,12 @@ code {
 		url(./images/Rick-Morty_space.jpg);
 
 	background-color: #191919;
-	min-height: 100vh;
+	height: 100%;
 	background-attachment: fixed;
 	background-position: left;
 	background-repeat: no-repeat;
 	background-size: cover;
+	overflow: hidden;
 
 	text-decoration: none;
 	list-style-type: none;

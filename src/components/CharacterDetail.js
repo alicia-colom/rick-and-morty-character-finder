@@ -13,7 +13,7 @@ const CharacterDetail = (props) => {
 			''
 		);
 		return (
-			<option key={i} className="detail__episodes--item" value={eachEpisode}>
+			<option key={i} value={eachEpisode}>
 				E{newString}
 			</option>
 		);
@@ -24,7 +24,11 @@ const CharacterDetail = (props) => {
 			<Header />
 
 			<main className="character-detail">
-				<Link to="/home" className="character-detail__link" title="Back to your search">
+				<Link
+					to="/home"
+					className="character-detail__link"
+					title="Back to your search"
+				>
 					Back to search
 				</Link>
 				<div className="character-detail__container">
@@ -74,6 +78,11 @@ const CharacterDetail = (props) => {
 								name="episodes"
 								title="Number of episodes where character appears"
 							>
+								<option
+									value="List"
+								>
+									List
+								</option>
 								{allEpisodes}
 							</select>
 						</div>
