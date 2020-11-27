@@ -26,11 +26,9 @@ const Filters = (props) => {
 	};
 
 	const handleChangeSort = (ev) => {
-		console.log('filtro por alfabetico', ev.target.checked);
 		const isSort = ev.target.checked;
 		return props.handleSort(isSort);
 	};
-	console.log(props.handleSort);
 
 	return (
 		<form className="filter">
@@ -62,27 +60,27 @@ const Filters = (props) => {
 				</div>
 
 				<div className="filter__gender">
-					<label htmlFor="Female">Female</label>
+					<label htmlFor="female">Female</label>
 					<input
 						type="radio"
-						id="Female"
+						id="female"
 						name="gender"
-						value="Female"
+						value="female"
 						onChange={handleClickGender}
 					/>
 				</div>
 				<div className="filter__gender">
-					<label htmlFor="Male">Male</label>
+					<label htmlFor="male">Male</label>
 					<input
 						type="radio"
-						id="Male"
+						id="male"
 						name="gender"
-						value="Male"
+						value="male"
 						onChange={handleClickGender}
 					/>
 				</div>
 				<div className="filter__gender">
-					<label htmlFor="unknown">Unknown</label>
+					<label htmlFor="unknown">Other</label>
 					<input
 						type="radio"
 						id="unknown"

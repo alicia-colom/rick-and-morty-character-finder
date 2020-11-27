@@ -46,50 +46,37 @@ const App = () => {
 	const handleFilterStatus = (value) => {
 		return setFilterStatus(value);
 	};
-	console.log(filterStatus);
 
 	// Set gender value
 	const handleFilterGender = (value) => {
 		return setFilterGender(value);
 	};
-	console.log(filterGender);
 
 	// Sort by name
 	const handleSort = (value) => {
 		return setIsSort(value);
 	};
-	console.log(isSort);
 
 	// Filters
 	const filterResults = initialList
 		.filter((eachItem) => {
-			return filterStatus === 'All' || eachItem.status === filterStatus;
+			return filterStatus === 'All' || eachItem.status.toLowerCase() === filterStatus;
 		})
 		.filter((eachItem) => {
-			return filterGender === 'All' || eachItem.gender === filterGender;
+			return filterGender === 'All' || eachItem.gender.toLowerCase() === filterGender;
+		})
+		.sort((a, b) => {
+			if (!isSort) {
+				return 0;
+			}
+			if (a.name > b.name) {
+				return 1;
+			}
+			if (a.name < b.name) {
+				return -1;
+			}
+			return 0;
 		});
-
-	// if (isSort === true) {
-	// 	return filteredResult.sort((a, b) => {
-	// 		if (a.name > b.name) {
-	// 			return 1;
-	// 		}
-	// 		if (a.name < b.name) {
-	// 			return -1;
-	// 		}
-	// 		return 0;
-	// 	});
-	// } else {
-	// 	return filteredResult;
-	// }
-
-	// return setResultList(filterResults);
-
-	// if (value === "All") {
-	// 	return setResultList(filterGender);
-	// } else {
-	// 	return resultList;
-	// }
 
 	return (
 		<>

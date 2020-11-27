@@ -17,11 +17,6 @@ const CharacterList = (props) => {
 		}
 	};
 
-	// Render character data
-
-	// const listaparapintar =
-	// 	props.resultList.length !== 0 ? props.resultList : props.initialList;
-
 	const characters = props.resultList.map((eachCharacter) => (
 		<li key={eachCharacter.id}>
 			<Link
