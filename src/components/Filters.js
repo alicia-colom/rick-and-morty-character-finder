@@ -11,23 +11,45 @@ const Filters = (props) => {
 		return props.handleFilterGender(genderValue);
 	};
 
-	// Filtro para species
-	const specieList = props.initialList.map((eachCharacter) => {
-		/// comparar si la specie ya está en la lista y no incluirla
-		return (
-			<option key={eachCharacter.id} value={eachCharacter.species}>
-				{eachCharacter.species}
-			</option>
-		);
-	});
-
-	const handleChangeSpecie = (ev) => {
-		console.log('filtro por specie', ev.target.value);
-	};
-
 	const handleChangeSort = (ev) => {
 		const isSort = ev.target.checked;
 		return props.handleSort(isSort);
+	};
+
+	// Filtro para species I:
+	// const specieFullList = props.initialList.map(
+	// 	(eachCharacter) => eachCharacter.species
+	// );
+	// let specieList = [];
+	// specieList = specieFullList.filter((eachSpecie, i) => {
+	// 	console.log(specieList);
+	// 	return eachSpecie !== specieFullList[i + 1] &&
+	// 		eachSpecie !== specieFullList[i + 2]
+	// 		? specieList.push(eachSpecie) && (
+	// 				<option key={eachSpecie.i} value={eachSpecie}>
+	// 					{eachSpecie}
+	// 				</option>
+	// 		  )
+	// 		: i + 1;
+	// });
+
+	// Filtro para species II:
+	// let specieList = list;
+	// const list = props.initialList.filter((each, i) => {
+	// 	return each.species === props.initialList[i].species
+	// 		? specieList.push(each)
+	// 		: i + 1;
+	// });
+
+	// Filtro para species III:
+	const specieList = props.resultList.map((eachCharacter) => (
+		<option key={eachCharacter.id} value={eachCharacter.species}>
+			{eachCharacter.species}
+		</option>
+	));
+
+	const handleChangeSpecie = (ev) => {
+		console.log('filtro por specie', ev.target.value);
 	};
 
 	return (
