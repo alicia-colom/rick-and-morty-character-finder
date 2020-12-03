@@ -48,7 +48,7 @@ const CharacterDetail = (props) => {
 									title="Status of the character"
 									className="detail__statusIcon"
 								/>
-							</div>{' '}
+							</div>
 							<p>
 								<b>Status: </b>
 								{props.detail.status}
