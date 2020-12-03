@@ -13,6 +13,7 @@ const App = () => {
 	const [resultList, setResultList] = useState([]);
 	const [filterStatus, setFilterStatus] = useState('All');
 	const [filterGender, setFilterGender] = useState('All');
+	const [filterSpecie, setFilterSpecie] = useState('All');
 	const [isSort, setIsSort] = useState(false);
 
 	// Handle data API
@@ -52,6 +53,11 @@ const App = () => {
 		return setFilterGender(value);
 	};
 
+	// // Set specie value
+	// const handleFilterSpecie = (value) => {
+	// 	return setFilterSpecie(value);
+	// };
+
 	// Sort by name
 	const handleSort = (value) => {
 		return setIsSort(value);
@@ -60,11 +66,20 @@ const App = () => {
 	// Filters
 	const filterResults = initialList
 		.filter((eachItem) => {
-			return filterStatus === 'All' || eachItem.status.toLowerCase() === filterStatus;
+			return (
+				filterStatus === 'All' || eachItem.status.toLowerCase() === filterStatus
+			);
 		})
 		.filter((eachItem) => {
-			return filterGender === 'All' || eachItem.gender.toLowerCase() === filterGender;
+			return (
+				filterGender === 'All' || eachItem.gender.toLowerCase() === filterGender
+			);
 		})
+		// .filter((eachItem) => {
+		// 	return (
+		// 		filterSpecie === 'All' || eachItem.species.toLowerCase() === filterSpecie
+		// 	);
+		// })
 		.sort((a, b) => {
 			if (!isSort) {
 				return 0;
@@ -93,6 +108,7 @@ const App = () => {
 						handleInputValue={handleInputValue}
 						handleFilterStatus={handleFilterStatus}
 						handleFilterGender={handleFilterGender}
+						// handleFilterSpecie={handleFilterSpecie}
 					/>
 				</Route>
 				<Route

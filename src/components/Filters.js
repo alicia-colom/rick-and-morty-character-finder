@@ -41,16 +41,19 @@ const Filters = (props) => {
 	// 		: i + 1;
 	// });
 
-	// Filtro para species III:
-	const specieList = props.resultList.map((eachCharacter) => (
-		<option key={eachCharacter.id} value={eachCharacter.species}>
-			{eachCharacter.species}
-		</option>
-	));
+	// // Filtro para species III:
+	// const specieList = props.resultList.map((eachCharacter) => (
+	// 	<option key={eachCharacter.id} value={eachCharacter.species}>
+	// 		{eachCharacter.species}
+	// 	</option>
+	// ));
 
-	const handleChangeSpecie = (ev) => {
-		console.log('filtro por specie', ev.target.value);
-	};
+
+	// const handleChangeSpecie = (ev) => {
+	// 	console.log('filtro por specie', ev.target.value);
+	// 	const specieValue = ev.target.value;
+	// 	return props.handleFilterSpecie(specieValue);
+	// };
 
 	return (
 		<form className="filter">
@@ -63,8 +66,8 @@ const Filters = (props) => {
 					onChange={handleChangeStatus}
 				>
 					<option value="All">All</option>
-					<option value="Alive">Alive</option>
-					<option value="Dead">Dead</option>
+					<option value="alive">Alive</option>
+					<option value="dead">Dead</option>
 					<option value="unknown">Unknown</option>
 				</select>
 			</fieldset>
@@ -113,7 +116,7 @@ const Filters = (props) => {
 				</div>
 			</fieldset>
 
-			<fieldset className="filter__fieldset">
+			{/* <fieldset className="filter__fieldset">
 				<label htmlFor="specie">Species: </label>
 				<select
 					className="filter__select"
@@ -121,21 +124,20 @@ const Filters = (props) => {
 					id="specie"
 					onChange={handleChangeSpecie}
 				>
+					<option value="All">All</option>
 					{specieList}
 				</select>
-			</fieldset>
+			</fieldset> */}
 
 			<fieldset className="filter__fieldset">
-				<div className="filter__gender">
-					<label htmlFor="sort">Sort by name</label>
-					<input
-						type="checkbox"
-						id="sort"
-						name="gender"
-						value="isSort"
-						onChange={handleChangeSort}
-					/>
-				</div>
+				<label htmlFor="sort">Sort by name</label>
+				<input
+					type="checkbox"
+					id="sort"
+					name="gender"
+					value="isSort"
+					onChange={handleChangeSort}
+				/>
 			</fieldset>
 		</form>
 	);

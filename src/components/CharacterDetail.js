@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import deadIcon from '../images/death-icon.png';
-import aliveIcon from '../images/yay-icon.svg';
+import aliveIcon from '../images/alive-icon.png';
+import unknownIcon from '../images/unknown-icon.png';
 
 const CharacterDetail = (props) => {
 	// Replace episodenumber instead url
@@ -18,6 +19,16 @@ const CharacterDetail = (props) => {
 			</option>
 		);
 	});
+
+	const placedStatusIcon = () => {
+		if (props.detail.status === 'Dead') {
+			return deadIcon;
+		} else if (props.detail.status === 'Alive') {
+			return aliveIcon;
+		} else {
+			return unknownIcon;
+		}
+	};
 
 	return (
 		<>
@@ -43,7 +54,7 @@ const CharacterDetail = (props) => {
 							<div className="character-detail__container--header">
 								<h2 className="detail__name">{props.detail.name}</h2>
 								<img
-									src={props.detail.status === 'Dead' ? deadIcon : aliveIcon}
+									src={placedStatusIcon()}
 									alt="Status icon"
 									title="Status of the character"
 									className="detail__statusIcon"

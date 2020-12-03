@@ -11,7 +11,12 @@
 		transform: rotate3d(1, 2, 3, 2deg);
 		background-color: rgba(71, 181, 205, 0.8);
 	}
-
+	&__statusIcon {
+		position: sticky;
+		width: 40px;
+		margin: 2px;
+		z-index: 1;
+	}
 	&__img {
 		width: 100%;
 		border-radius: 20px;
@@ -28,12 +33,7 @@
 			padding: 5px 0;
 			font-size: 15px;
 		}
-		&--statusIcon {
-			position: relative;
-			// bottom: 28px;
-			// left: 15px;
-			width: 40px;
-		}
+
 		&--small {
 			color: #efefef;
 			font-size: 15px;
@@ -45,4 +45,8 @@
 			}
 		}
 	}
+}
+.position {
+	position: relative;
+	top: -44px;
 }

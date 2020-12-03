@@ -73,6 +73,7 @@ const CharacterList = (props) => {
 						resultList={props.resultList}
 						handleFilterStatus={props.handleFilterStatus}
 						handleFilterGender={props.handleFilterGender}
+						// handleFilterSpecie={props.handleFilterSpecie}
 						handleSort={props.handleSort}
 					/>
 
