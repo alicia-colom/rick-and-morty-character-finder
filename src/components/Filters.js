@@ -48,7 +48,6 @@ const Filters = (props) => {
 	// 	</option>
 	// ));
 
-
 	// const handleChangeSpecie = (ev) => {
 	// 	console.log('filtro por specie', ev.target.value);
 	// 	const specieValue = ev.target.value;
@@ -60,59 +59,62 @@ const Filters = (props) => {
 			<fieldset className="filter__fieldset">
 				<label htmlFor="status">Status: </label>
 				<select
-					className="filter__select"
+					className="filter__fieldset--select"
 					name="status"
 					id="status"
 					onChange={handleChangeStatus}
 				>
-					<option value="All">All</option>
+					<option value="all">All</option>
 					<option value="alive">Alive</option>
 					<option value="dead">Dead</option>
 					<option value="unknown">Unknown</option>
 				</select>
 			</fieldset>
 
-			<fieldset className="filter__fieldset">
-				<div className="filter__gender">
-					<label htmlFor="All">All</label>
-					<input
-						type="radio"
-						id="All"
-						name="gender"
-						value="All"
-						onChange={handleClickGender}
-					/>
+			<fieldset className="filter__fieldset gender">
+				<div className="gender__block">
+					<div>
+						<input
+							type="radio"
+							id="female"
+							name="gender"
+							value="female"
+							onChange={handleClickGender}
+						/>
+						<label htmlFor="female">Female</label>
+					</div>
+					<div>
+						<input
+							type="radio"
+							id="male"
+							name="gender"
+							value="male"
+							onChange={handleClickGender}
+						/>
+						<label htmlFor="male">Male</label>
+					</div>
 				</div>
-
-				<div className="filter__gender">
-					<label htmlFor="female">Female</label>
-					<input
-						type="radio"
-						id="female"
-						name="gender"
-						value="female"
-						onChange={handleClickGender}
-					/>
-				</div>
-				<div className="filter__gender">
-					<label htmlFor="male">Male</label>
-					<input
-						type="radio"
-						id="male"
-						name="gender"
-						value="male"
-						onChange={handleClickGender}
-					/>
-				</div>
-				<div className="filter__gender">
-					<label htmlFor="unknown">Other</label>
-					<input
-						type="radio"
-						id="unknown"
-						name="gender"
-						value="unknown"
-						onChange={handleClickGender}
-					/>
+				<div className="gender__block">
+					<div>
+						<input
+							type="radio"
+							id="unknown"
+							name="gender"
+							value="unknown"
+							onChange={handleClickGender}
+						/>
+						<label htmlFor="unknown">Other</label>
+					</div>
+					<div>
+						<input
+							type="radio"
+							id="all"
+							name="gender"
+							value="all"
+							onChange={handleClickGender}
+						/>
+						<label htmlFor="all">All</label>
+					</div>
 				</div>
 			</fieldset>
 
@@ -130,11 +132,16 @@ const Filters = (props) => {
 			</fieldset> */}
 
 			<fieldset className="filter__fieldset">
-				<label htmlFor="sort">Sort by name</label>
+				<label className="filter__fieldset--sort" htmlFor="sort">
+					Sort by name
+				</label>
+				<label className="filter__fieldset--sortAZ" htmlFor="sort">
+					Sort A-Z
+				</label>
 				<input
 					type="checkbox"
 					id="sort"
-					name="gender"
+					name="sort"
 					value="isSort"
 					onChange={handleChangeSort}
 				/>
