@@ -56,21 +56,6 @@ const Filters = (props) => {
 
 	return (
 		<form className="filter">
-			<fieldset className="filter__fieldset">
-				<label htmlFor="status">Status: </label>
-				<select
-					className="filter__fieldset--select"
-					name="status"
-					id="status"
-					onChange={handleChangeStatus}
-				>
-					<option value="all">All</option>
-					<option value="alive">Alive</option>
-					<option value="dead">Dead</option>
-					<option value="unknown">Unknown</option>
-				</select>
-			</fieldset>
-
 			<fieldset className="filter__fieldset gender">
 				<div className="gender__block">
 					<div>
